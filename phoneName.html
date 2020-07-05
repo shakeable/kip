@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>      
+    	<meta charset="UTF-8" />	
+		<title>How do I spell my name. Phonetic Spelling of your name.</title> 
+		<script type="text/javascript" charset="utf-8">   
+		   function phonetic_name(e){
+				var inp = document.getElementById('name');
+				var lookup = new Object;
+				lookup.A = 'Alpha';
+				lookup.B = 'Bravo';
+				lookup.C = 'Charlie';
+				lookup.D = 'Delta';
+				lookup.E = 'Echo';
+				lookup.F = 'Foxtrot';
+				lookup.G = 'Golf';
+				lookup.H = 'Hotel';
+				lookup.I = 'India';
+				lookup.J = 'Juliet';
+				lookup.K = 'Kilo';
+				lookup.L = 'Lima';
+				lookup.M = 'Mike';
+				lookup.N = 'November';
+				lookup.O = 'Oscar';
+				lookup.P = 'Papa';
+				lookup.Q = 'Quebec';
+				lookup.R = 'Romeo';
+				lookup.S = 'Sierra';
+				lookup.T = 'Tango';
+				lookup.U = 'Uniform';
+				lookup.V = 'Victor';
+				lookup.W = 'Whiskey';
+				lookup.X = 'X-ray';
+				lookup.Y = 'Yankee';
+				lookup.Z = 'Zulu';     
+				
+				var name = inp.value; 
+				var pname = document.getElementById("pname"); 
+				if ( pname.hasChildNodes()){
+					while ( pname.childNodes.length >= 1 ){
+						pname.removeChild(pname.firstChild );       
+					}
+				}
+				
+				if (name.length > 0 ){
+					name = name.toUpperCase();  
+					for (var i=0; i< name.length; i++){
+						var word = lookup[name[i]];  
+						if (word != undefined){
+							var pnode = document.createElement('p');
+							pnode.innerHTML = '<span>'+name[i]+'</span>'+word;
+							pname.appendChild(pnode);
+						} 
+						if(name[i] == '\s'){ 
+							alert("white space");
+							var pnode = document.createElement('p');
+							pnode.innerHTML = '<br/>';
+						} 
+					}
+				}
+			return true;
+			} //~phonetic_name               
+			function kp(e){     
+				var keynum; 
+				if(window.event) // IE
+				  {
+				  keynum = e.keyCode;
+				  }
+				else if(e.which) // Netscape/Firefox/Opera
+				  {
+				  keynum = e.which;
+				  }
+				if (keynum == 13){
+					return false;
+					}
+				else{
+					return true;
+				}
+			}
+		 </script>  
+		<style type="text/css" media="screen">   
+			body{
+				margin-left: 2em;
+				border-left: solid 3px #cce;
+				padding-left:2em;
+			} 
+			h1 {border-bottom: solid 1px #900;
+				display:inline;
+				margin-top:1em;
+				}
+			#phonetic{
+				margin-top:1em;
+			} 
+			#pname{
+				margin-top:2em;
+			} 
+			#pname p {
+				font-size:1.0em;
+			} 
+			#pname p span{
+				font-color:#ccc;
+				margin-right:1em;
+			}
+			#note{
+				margin-top:9em;
+			font-size:0.83em;
+			color:#aaa;
+			   }
+			   #note a{
+			color:#444;
+			text-decoration:none;
+			}
+		</style> 
+	</head>
+	<body> 
+		<h1>How do I spell my name?</h1>
+		<form id="phonetic">
+			<input type="text" name="name" id="name" onkeypress="return kp(event);" /> 
+			<input type="button" onClick="phonetic_name(event);" value="&laquo; spell &raquo;">
+		</form>
+		<div id="pname"></div>
+		<div id="note">
+			<p>Known to work on Firefox, Safari and Google Chrome browsers</p>
+			<p>This Phonetic Speller uses the <a href="http://en.wikipedia.org/wiki/NATO_phonetic_alphabet">		International Radiotelephony Spelling Alphabet</a>.
+			</p>
+			<p>Created by <a href="http://pradeepgowda.com/">Pradeep Gowda</a> </p>
+			<p><small>Last update: 2010-02-08</small></p>
+		</div>
+	</body>
+</html>
