@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Times Tables</title>
+    <link href="style.min.css?v=0.1" rel="stylesheet" type="text/css" />
+    <link href="jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script src="jquery-1.9.0.min.js"></script>
+    <script src="jquery-ui-1.8.min.js"></script>
+</head>
+<body>
+    <div id="first_div">
+        <div class="fl_0" style="border:1px solid #CCCCCC;padding:8px 5px 8px 5px;"><a href="http://tablestest.com" class="t_0">Tables<span style="color:#4C6799;">Test</span></a>
+        </div>
+        <!-- <div class="fl_0" style="margin:20px 0 0 20px;">
+            <a class="button_example_3" style="color:#0096cc;" href="http://tablestest.com">Level 0</a>
+            <a class="button_example_3" href="times-tables-test-level1">Level 1</a>
+            <a class="button_example_3" href="times-tables-test-level2">Level 2</a>
+            <a class="button_example_3" href="times-tables-test-level3">Level 3</a>
+            <a class="button_example_3" href="times-tables-test-level4">Level 4</a>
+            <a class="button_example_3" href="times-tables-test-level5">Level 5</a>
+            <a class="button_example_3" id="score_level" href="javascript:void(0);">Score</a>
+            <br />
+            <div class="level_i">Times Tables test : <font color="#0096cc">10 questions</font> with <font color="#0096cc">10 choices</font> of answers.</div>
+        </div> -->
+        <div class="clr"></div>
+        <div class="fl_0">
+            <div id="t_grid">Times tables grid</div>
+            <div id="left_div">
+                <div class="row_tables">
+                    <div class="menu_0" id="row_" style="font-size:14px;font-family:arial, helvetica, sans-serif;">x</div>
+                    <div class="menu_0" id="row_2">2</div>
+                    <div class="menu_0" id="row_3">3</div>
+                    <div class="menu_0" id="row_4">4</div>
+                    <div class="menu_0" id="row_5">5</div>
+                    <div class="menu_0" id="row_6">6</div>
+                    <div class="menu_0" id="row_7">7</div>
+                    <div class="menu_0" id="row_8">8</div>
+                    <div class="menu_0" id="row_9">9</div>
+                    <div class="menu_0" id="row_10">10</div>
+                    <div class="menu_0" id="row_11">11</div>
+                    <div class="menu_0" id="row_12">12</div>
+                    <div class="menu_0" id="row_13">13</div>
+                    <div class="menu_0" id="row_14">14</div>
+                    <div class="menu_0" id="row_15">15</div>
+                    <div class="menu_0" id="row_16">16</div>
+                    <div class="menu_0" id="row_17">17</div>
+                    <div class="menu_0" id="row_18">18</div>
+                    <div class="menu_0" id="row_19">19</div>
+                    <div class="menu_0" id="row_20">20</div>
+                </div>
+                <div class="clr"></div>
+                <div class="column_tables">
+                    <div id="column_1" class="multiplication_result_column">1</div>
+                    <div id="column_2" class="multiplication_result_column">2</div>
+                    <div id="column_3" class="multiplication_result_column">3</div>
+                    <div id="column_4" class="multiplication_result_column">4</div>
+                    <div id="column_5" class="multiplication_result_column">5</div>
+                    <div id="column_6" class="multiplication_result_column">6</div>
+                    <div id="column_7" class="multiplication_result_column">7</div>
+                    <div id="column_8" class="multiplication_result_column">8</div>
+                    <div id="column_9" class="multiplication_result_column">9</div>
+                    <div id="column_10" class="multiplication_result_column">10</div>
+                </div>
+                <div class="column_tables">
+                    <div id="result_2_1" class="multiplication_result">2</div>
+                    <div id="result_2_2" class="multiplication_result">4</div>
+                    <div id="result_2_3" class="multiplication_result">6</div>
+                    <div id="result_2_4" class="multiplication_result">8</div>
+                    <div id="result_2_5" class="multiplication_result">10</div>
+                    <div id="result_2_6" class="multiplication_result">12</div>
+                    <div id="result_2_7" class="multiplication_result">14</div>
+                    <div id="result_2_8" class="multiplication_result">16</div>
+                    <div id="result_2_9" class="multiplication_result">18</div>
+                    <div id="result_2_10" class="multiplication_result">20</div>
+                </div>
+                <div class="column_tables">
+                    <div id="result_3_1" class="multiplication_result">3</div>
+                    <div id="result_3_2" class="multiplication_result">6</div>
+                    <div id="result_3_3" class="multiplication_result">9</div>
+                    <div id="result_3_4" class="multiplication_result">12</div>
+                    <div id="result_3_5" class="multiplication_result">15</div>
+                    <div id="result_3_6" class="multiplication_result">18</div>
+                    <div id="result_3_7" class="multiplication_result">21</div>
+                    <div id="result_3_8" class="multiplication_result">24</div>
+                    <div id="result_3_9" class="multiplication_result">27</div>
+                    <div id="result_3_10" class="multiplication_result">30</div>
+                </div>
+                <div class="column_tables">
+                    <div id="result_4_1" class="multiplication_result">4</div>
+                    <div id="result_4_2" class="multiplication_result">8</div>
+                    <div id="result_4_3" class="multiplication_result">12</div>
+                    <div id="result_4_4" class="multiplication_result">16</div>
+                    <div id="result_4_5" class="multiplication_result">20</div>
+                    <div id="result_4_6" class="multiplication_result">24</div>
+                    <div id="result_4_7" class="multiplication_result">28</div>
+                    <div id="result_4_8" class="multiplication_result">32</div>
+                    <div id="result_4_9" class="multiplication_result">36</div>
+                    <div id="result_4_10" class="multiplication_result">40</div>
+                </div>
+                <div class="column_tables">
+                    <div id="result_5_1" class="multiplication_result">5</div>
+                    <div id="result_5_2" class="multiplication_result">10</div>
+                    <div id="result_5_3" class="multiplication_result">15</div>
+                    <div id="result_5_4" class="multiplication_result">20</div>
+                    <div id="result_5_5" class="multiplication_result">25</div>
+                    <div id="result_5_6" class="multiplication_result">30</div>
+                    <div id="result_5_7" class="multiplication_result">35</div>
+                    <div id="result_5_8" class="multiplication_result">40</div>
+                    <div id="result_5_9" class="multiplication_result">45</div>
+                    <div id="result_5_10" class="multiplication_result">50</div>
+                </div>
+                <div class="column_tables">
+                    <div id="result_6_1" class="multiplication_result">6</div>
+                    <div id="result_6_2" class="multiplication_result">12</div>
+                    <div id="result_6_3" class="multiplication_result">18</div>
+                    <div id="result_6_4" class="multiplication_result">24</div>
+                    <div id="result_6_5" class="multiplication_result">30</div>
+                    <div id="result_6_6" class="multiplication_result">36</div>
+                    <div id="result_6_7" class="multiplication_result">42</div>
+                    <div id="result_6_8" class="multiplication_result">48</div>
+                    <div id="result_6_9" class="multiplication_result">54</div>
+                    <div id="result_6_10" class="multiplication_result">60</div>
+                </div>
+                <div class="column_tables">
+                    <div id="result_7_1" class="multiplication_result">7</div>
+                    <div id="result_7_2" class="multiplication_result">14</div>
+                    <div id="result_7_3" class="multiplication_result">21</div>
+                    <div id="result_7_4" class="multiplication_result">28</div>
+                    <div id="result_7_5" class="multiplication_result">35</div>
+                    <div id="result_7_6" class="multiplication_result">42</div>
+                    <div id="result_7_7" class="multiplication_result">49</div>
+                    <div id="result_7_8" class="multiplication_result">56</div>
+                    <div id="result_7_9" class="multiplication_result">63</div>
+                    <div id="result_7_10" class="multiplication_result">70</div>
+                </div>
+                <div class="column_tables">
+                    <div id="result_8_1" class="multiplication_result">8</div>
+                    <div id="result_8_2" class="multiplication_result">16</div>
+                    <div id="result_8_3" class="multiplication_result">24</div>
+                    <div id="result_8_4" class="multiplication_result">32</div>
+                    <div id="result_8_5" class="multiplication_result">40</div>
+                    <div id="result_8_6" class="multiplication_result">48</div>
+                    <div id="result_8_7" class="multiplication_result">56</div>
+                    <div id="result_8_8" class="multiplication_result">64</div>
+                    <div id="result_8_9" class="multiplication_result">72</div>
+                    <div id="result_8_10" class="multiplication_result">80</div>
+                </div>
+                <div class="column_tables">
+                    <div id="result_9_1" class="multiplication_result">9</div>
+                    <div id="result_9_2" class="multiplication_result">18</div>
+                    <div id="result_9_3" class="multiplication_result">27</div>
+                    <div id="result_9_4" class="multiplication_result">36</div>
+                    <div id="result_9_5" class="multiplication_result">45</div>
+                    <div id="result_9_6" class="multiplication_result">54</div>
+                    <div id="result_9_7" class="multiplication_result">63</div>
+                    <div id="result_9_8" class="multiplication_result">72</div>
+                    <div id="result_9_9" class="multiplication_result">81</div>
+                    <div id="result_9_10" class="multiplication_result">90</div>
+                </div>
+                <div class="column_tables">
+                    <div id="result_10_1" class="multiplication_result">10</div>
+                    <div id="result_10_2" class="multiplication_result">20</div>
+                    <div id="result_10_3" class="multiplication_result">30</div>
+                    <div id="result_10_4" class="multiplication_result">40</div>
+                    <div id="result_10_5" class="multiplication_result">50</div>
+                    <div id="result_10_6" class="multiplication_result">60</div>
+                    <div id="result_10_7" class="multiplication_result">70</div>
+                    <div id="result_10_8" class="multiplication_result">80</div>
+                    <div id="result_10_9" class="multiplication_result">90</div>
+                    <div id="result_10_10" class="multiplication_result">100</div>
+                </div>
+				<div class="column_tables">
+                    <div id="result_11_1" class="multiplication_result">11</div>
+                    <div id="result_11_2" class="multiplication_result">22</div>
+                    <div id="result_11_3" class="multiplication_result">33</div>
+                    <div id="result_11_4" class="multiplication_result">44</div>
+                    <div id="result_11_5" class="multiplication_result">55</div>
+                    <div id="result_11_6" class="multiplication_result">66</div>
+                    <div id="result_11_7" class="multiplication_result">77</div>
+                    <div id="result_11_8" class="multiplication_result">88</div>
+                    <div id="result_11_9" class="multiplication_result">99</div>
+                    <div id="result_11_10" class="multiplication_result">110</div>
+                </div>
+				<div class="column_tables">
+                    <div id="result_12_1" class="multiplication_result">12</div>
+                    <div id="result_12_2" class="multiplication_result">24</div>
+                    <div id="result_12_3" class="multiplication_result">36</div>
+                    <div id="result_12_4" class="multiplication_result">42</div>
+                    <div id="result_12_5" class="multiplication_result">60</div>
+                    <div id="result_12_6" class="multiplication_result">72</div>
+                    <div id="result_12_7" class="multiplication_result">84</div>
+                    <div id="result_12_8" class="multiplication_result">96</div>
+                    <div id="result_12_9" class="multiplication_result">108</div>
+                    <div id="result_12_10" class="multiplication_result">120</div>
+                </div>
+				<div class="column_tables">
+                    <div id="result_13_1" class="multiplication_result">13</div>
+                    <div id="result_13_2" class="multiplication_result">26</div>
+                    <div id="result_13_3" class="multiplication_result">39</div>
+                    <div id="result_13_4" class="multiplication_result">52</div>
+                    <div id="result_13_5" class="multiplication_result">65</div>
+                    <div id="result_13_6" class="multiplication_result">78</div>
+                    <div id="result_13_7" class="multiplication_result">91</div>
+                    <div id="result_13_8" class="multiplication_result">104</div>
+                    <div id="result_13_9" class="multiplication_result">117</div>
+                    <div id="result_13_10" class="multiplication_result">130</div>
+                </div>
+				<div class="column_tables">
+                    <div id="result_14_1" class="multiplication_result">14</div>
+                    <div id="result_14_2" class="multiplication_result">28</div>
+                    <div id="result_14_3" class="multiplication_result">42</div>
+                    <div id="result_14_4" class="multiplication_result">56</div>
+                    <div id="result_14_5" class="multiplication_result">70</div>
+                    <div id="result_14_6" class="multiplication_result">84</div>
+                    <div id="result_14_7" class="multiplication_result">98</div>
+                    <div id="result_14_8" class="multiplication_result">112</div>
+                    <div id="result_14_9" class="multiplication_result">126</div>
+                    <div id="result_14_10" class="multiplication_result">140</div>
+                </div>
+				<div class="column_tables">
+                    <div id="result_15_1" class="multiplication_result">15</div>
+                    <div id="result_15_2" class="multiplication_result">30</div>
+                    <div id="result_15_3" class="multiplication_result">45</div>
+                    <div id="result_15_4" class="multiplication_result">60</div>
+                    <div id="result_15_5" class="multiplication_result">75</div>
+                    <div id="result_15_6" class="multiplication_result">90</div>
+                    <div id="result_15_7" class="multiplication_result">105</div>
+                    <div id="result_15_8" class="multiplication_result">120</div>
+                    <div id="result_15_9" class="multiplication_result">135</div>
+                    <div id="result_15_10" class="multiplication_result">150</div>
+                </div>
+				<div class="column_tables">
+                    <div id="result_16_1" class="multiplication_result">16</div>
+                    <div id="result_16_2" class="multiplication_result">32</div>
+                    <div id="result_16_3" class="multiplication_result">48</div>
+                    <div id="result_16_4" class="multiplication_result">64</div>
+                    <div id="result_16_5" class="multiplication_result">80</div>
+                    <div id="result_16_6" class="multiplication_result">96</div>
+                    <div id="result_16_7" class="multiplication_result">112</div>
+                    <div id="result_16_8" class="multiplication_result">128</div>
+                    <div id="result_16_9" class="multiplication_result">144</div>
+                    <div id="result_16_10" class="multiplication_result">160</div>
+                </div>
+				<div class="column_tables">
+                    <div id="result_17_1" class="multiplication_result">17</div>
+                    <div id="result_17_2" class="multiplication_result">34</div>
+                    <div id="result_17_3" class="multiplication_result">51</div>
+                    <div id="result_17_4" class="multiplication_result">68</div>
+                    <div id="result_17_5" class="multiplication_result">85</div>
+                    <div id="result_17_6" class="multiplication_result">102</div>
+                    <div id="result_17_7" class="multiplication_result">119</div>
+                    <div id="result_17_8" class="multiplication_result">136</div>
+                    <div id="result_17_9" class="multiplication_result">153</div>
+                    <div id="result_17_10" class="multiplication_result">170</div>
+                </div>
+				<div class="column_tables">
+                    <div id="result_18_1" class="multiplication_result">18</div>
+                    <div id="result_18_2" class="multiplication_result">36</div>
+                    <div id="result_18_3" class="multiplication_result">54</div>
+                    <div id="result_18_4" class="multiplication_result">72</div>
+                    <div id="result_18_5" class="multiplication_result">90</div>
+                    <div id="result_18_6" class="multiplication_result">108</div>
+                    <div id="result_18_7" class="multiplication_result">126</div>
+                    <div id="result_18_8" class="multiplication_result">144</div>
+                    <div id="result_18_9" class="multiplication_result">162</div>
+                    <div id="result_18_10" class="multiplication_result">180</div>
+                </div>
+				<div class="column_tables">
+                    <div id="result_19_1" class="multiplication_result">19</div>
+                    <div id="result_19_2" class="multiplication_result">38</div>
+                    <div id="result_19_3" class="multiplication_result">57</div>
+                    <div id="result_19_4" class="multiplication_result">76</div>
+                    <div id="result_19_5" class="multiplication_result">95</div>
+                    <div id="result_19_6" class="multiplication_result">114</div>
+                    <div id="result_19_7" class="multiplication_result">133</div>
+                    <div id="result_19_8" class="multiplication_result">152</div>
+                    <div id="result_19_9" class="multiplication_result">171</div>
+                    <div id="result_19_10" class="multiplication_result">190</div>
+                </div>
+				<div class="column_tables">
+                    <div id="result_20_1" class="multiplication_result">20</div>
+                    <div id="result_20_2" class="multiplication_result">40</div>
+                    <div id="result_20_3" class="multiplication_result">60</div>
+                    <div id="result_20_4" class="multiplication_result">80</div>
+                    <div id="result_20_5" class="multiplication_result">100</div>
+                    <div id="result_20_6" class="multiplication_result">120</div>
+                    <div id="result_20_7" class="multiplication_result">140</div>
+                    <div id="result_20_8" class="multiplication_result">160</div>
+                    <div id="result_20_9" class="multiplication_result">180</div>
+                    <div id="result_20_10" class="multiplication_result">200</div>
+                </div>
+            </div>
+        </div>
+        <div id="r1_div">
+            <div id="question_div">
+                <div id="question"></div>
+                <span id="answer_choice"></span>
+            </div>
+
+            <form>
+                <input type="hidden" id="status_answer" value="" />
+                <input type="hidden" id="answer_input" value="" />
+                <input type="hidden" id="answer_id" value="" />
+                <input type="hidden" id="nb_of_answer" value="0" />
+                <input type="hidden" id="nb_of_error" value="0" />
+                <input type="hidden" id="game_on_off" value="off" />
+                <input type="hidden" id="question_x" value="" />
+                <input type="hidden" id="question_y" value="" />
+                <input type="hidden" id="status_game" class="button_example" value="on" />
+                <input type="button" id="multiplication_test" class="button_example" value="LET'S GO" />
+                <input type="button" id="reset" class="button_example" value="RESET" />
+                <input type="button" id="reload_game" class="button_example" value="NEW GAME" />
+                <input type="button" id="save_score" class="button_example" value="SAVE SCORE" />
+                <input type="button" id="disconnect" class="button_example" value="DISCONNECT " />
+                <div id="message_area"></div>
+                <div id="message_i"></div>
+                <div id="save_score_area">
+                    <input class="i_0" type="text" id="user_name_log" value="Username" />
+                    <input class="i_0" type="password" id="password_log" value="Password" />
+                    <input type="button" id="log_in" value="Log in" />
+                    <br />
+                    <a class="l_0" id="forgot_pass" href="javascript:void(0);">Forgot pass ?</a>
+                    <div id="forgot_div">
+                        <input class="i_0" type="text" id="email_forgot" value="E-mail" />
+                        <input type="button" id="forgot_send" value="Send" />&nbsp;<a class="l_0" id="close_forgot_pass" href="javascript:void(0);">Close ?</a>
+                    </div>
+                    <br />
+                    <br />
+                    <input class="i_0" type="text" id="email_register" value="E-mail" />
+                    <input class="i_0" type="password" id="password_register" value="Password" />
+                    <input type="button" id="register" value="Register" />
+                </div>
+            </form>
+
+            <div id="chrono_txt">
+                <div id="chronotime">0:00:00:00</div>
+            </div>
+            <div class="clr"></div>
+
+            <div id="r2_div">
+                <div class="l_score">Loading Scores...</div>
+            </div>
+
+            <div id="r2_0_div"></div>
+        </div>
+        <div id="r3_div">
+            <div id="points_answer_title">
+                <div class="fl_0"><span id="points_answer">0</span> points</div>
+                <div id="tweet_result"></div>
+                <div class="clr"></div>
+            </div>
+            <div id="time_to_answer_div">
+                <div id="time_to_answer_txt">Time to answer</div>
+                <div id="time_to_answer"></div>
+            </div>
+        </div>
+        <div class="clr"></div>
+
+        <form>
+            <input type="hidden" id="level" value="0" />
+        </form>
+
+        <!--
+		<div id="footer_div">
+            <div class="t_1"><big>How does it work ?</big>
+                <br />
+                <br /> Tablestest is a website where you can <big><font color="#0096cc">learn your multiplication table</font></big> with the times tables grid.
+                <br />
+                <br />You can train your memory by <big><font color="#0096cc">playing the game</font></big> in different levels.
+                <br /> You get points when you answer correctly and more points when you answer quickly. Your score can be saved if you register account.
+                <br />
+                <br /> This a beta version, so new options will be online soon.
+                <a href="#" onclick="window.open('http://tablestest.com/feedback','_blank','width=600,height=500' );return false;">Feedback</a>
+                <br />
+                <br />Thanks to Elisa for the Italian translation.
+                <br />Thanks to Carole for the Spanish translation.
+                <br />Thanks to Jo&atilde;o Fernando for the Portuguese translation.
+            </div>
+            <div class="t_2">
+                <div style="margin:0 0 170px 0;">
+                    <a href="#" title="English language"><img src="img/gb.png" alt="" border="0" />
+                    </a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="http://tablestest.com/it" title="Italian language"><img src="img/it.png" alt="" border="0" />
+                    </a>&nbsp;&nbsp;&nbsp;&nbsp
+                    <a href="http://tablestest.com/fr" title="French language"><img src="img/fr.png" alt="" border="0" />
+                    </a>&nbsp;&nbsp;&nbsp;&nbsp
+                    <a href="http://tablestest.com/sp" title="Spanish language"><img src="img/sp.png" alt="" border="0" />
+                    </a>&nbsp;&nbsp;&nbsp;&nbsp
+                    <a href="http://tablestest.com/pt" title="Portuguese language"><img src="img/pt.png" alt="" border="0" />
+                    </a>
+                </div>
+                &copy; 2014 - Tablestest.com - v0.27 - <a href="#" onclick="window.open('http://tablestest.com/contact','_blank','width=400,height=100' );return false;">Contact</a> - <a href="#" onclick="window.open('http://tablestest.com/privacy','_blank','width=500,height=400' );return false;">Privacy</a>
+            </div>
+        </div> -->
+
+    </div>
+	<!--
+    <div class="sb">
+        <div class="fl_0" style="margin:0 40px 0 0;">
+
+            <select id="table_choice_for_game">
+                <option value="all">Test with : all tables</option>
+                <option value="1">Table 1</option>
+                <option value="2">Table 2</option>
+                <option value="3">Table 3</option>
+                <option value="4">Table 4</option>
+                <option value="5">Table 5</option>
+                <option value="6">Table 6</option>
+                <option value="7">Table 7</option>
+                <option value="8">Table 8</option>
+                <option value="9">Table 9</option>
+                <option value="10">Table 10</option>
+            </select>
+
+            <select onchange="window.location.href=this.options
+    [this.selectedIndex].value">
+                <option value="no_choice">Choose a language</option>
+                <option value="http://tablestest.com">English</option>
+                <option value="http://tablestest.com/it">Italian</option>
+                <option value="http://tablestest.com/fr">French</option>
+                <option value="http://tablestest.com/sp">Spanish</option>
+                <option value="http://tablestest.com/pt">Portuguese</option>
+            </select>
+        </div>
+        <div class="fl_0" style="margin:0 20px 0 0;">
+            <div class="fb-like" data-href="http://tablestest.com/" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+        </div>
+        <div class="fl_0"><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://tablestest.com">Tweet</a>
+            <script>
+                ! function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (!d.getElementById(id)) {
+                        js = d.createElement(s);
+                        js.id = id;
+                        js.src = "//platform.twitter.com/widgets.js";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }
+                }(document, "script", "twitter-wjs");
+            </script>
+        </div>
+    </div> 
+	-->
+    <script>
+        $(document).ready(function() {
+            $(".multiplication_result,.multiplication_result_column,.menu_0").hover(
+                function() {
+                    var color = $(this).css("background-color");
+                    if (color != 'rgb(133, 224, 133)' && color != 'rgb(244, 113, 135)') {
+                        $(this).css("background-color", "yellow");
+                        var current_id = $(this).attr('id');
+                        var elem = current_id.split('_');
+                        var a = elem[0];
+                        var b = elem[1];
+                        var c = elem[2];
+                        if (b != undefined && c != undefined && $('#game_on_off').val() == 'off') {
+                            var d = b * c;
+                            $("#t_grid").html('Times tables grid : <font color="#0096cc">' + b + ' x ' + c + ' = ' + d + '</font>');
+                        } else {
+                            $("#t_grid").html('Times tables grid');
+                        }
+                        if (a != 'column' && a != 'row') {
+                            $("#row_" + b).css("background-color", "#ffff00");
+                            $("#column_" + c).css("background-color", "#ffff00");
+                        }
+                    }
+                },
+                function() {
+                    var color = $(this).css("background-color");
+                    if (color != 'rgb(133, 224, 133)' && color != 'rgb(244, 113, 135)') {
+                        $(this).css("background-color", "#e6e6e6");
+                        var current_id = $(this).attr('id');
+                        var elem = current_id.split('_');
+                        var a = elem[0];
+                        var b = elem[1];
+                        var c = elem[2];
+                        $("#row_" + b).css("background-color", "#cccccc");
+                        $("#column_" + c).css("background-color", "#cccccc");
+                    }
+                });
+            $("#left_div").hover(function() {
+                var a = '';
+            }, function() {
+                $("#t_grid").html('Times tables grid');
+            });
+            $("#reload_game,#reset").click(
+                function() {
+                    window.location.href = "TimeTable.html";
+                });
+
+            $("#multiplication_test").click(function() {
+                $('#multiplication_test').hide();
+                $('#r2_div').hide();
+                $('#r2_0_div').hide();
+                $('#reset').show();
+                $('#game_on_off').val('on');
+                $('#message_area').html('3');
+                setTimeout(function() {
+                    $('#message_area').html('2');
+                }, 1000);
+                setTimeout(function() {
+                    $('#message_area').html('1');
+                }, 2000);
+                setTimeout(function() {
+                    $('#message_area').html('');
+                    $(this).test(true);
+                }, 3000);
+            });
+            $(this).init_page();
+        });
+        jQuery.fn.answer_fct = function() {
+            if ($('#status_game').val() == 'on') {
+                var max_answer = "190";
+                var nb_of_answer = $('#nb_of_answer').val();
+                var status_answer = $('#status_answer').val();
+                var answer_id = $('#answer_id').val();
+                var answer_input = $('#answer_input').val();
+                var elem = answer_id.split('_');
+                var a = elem[0];
+                var b = elem[1];
+                var c = elem[2];
+                var bg_color = "#CCCCCC";
+                var current_error = $("#nb_of_error").val();
+                if (status_answer == 'correct_answer') {
+                    $('#' + answer_id).css("background-color", "#85e085");
+                    $('#' + answer_id).html(answer_input);
+                    bg_color = "#85e085";
+                } else {
+                    $('#' + answer_id).css("background-color", "#f47187");
+                    $('#' + answer_id).html(answer_input);
+                    bg_color = "#f47187";
+                    current_error++;
+                }
+                $("#nb_of_error").val(current_error);
+                var question_x = $('#question_x').val();
+                var question_y = $('#question_y').val();
+                var chronotime = $('#chronotime').html();
+                var elem = chronotime.split(":");
+                var h = elem[0];
+                var m = elem[1];
+                var s = elem[2];
+                var ms = elem[3];
+                if (m == 00) var time_answer = '<tr><td width="50" align="right"><b>' + question_x + 'x' + question_y + '</b> :</td><td>&nbsp;' + s + 's ' + ms + 'ms</td></tr>';
+                else var time_answer = '<tr><td width="50" align="right"><b>' + question_x + 'x' + question_y + '</b> :</td><td>&nbsp;' + m + 'm ' + s + 's ' + ms + 'ms</td></tr>';
+                var time_to_answer = $('#time_to_answer').html();
+                time_to_answer = '<div class="time_answer_val" style="background-color:' + bg_color + ';"><table border="0" style="font-size:12px;" cellpadding="0" cellspacing="0" width="90%">' + time_answer + '</table></div>'+time_to_answer;
+                nb_of_answer++;
+                $('#nb_of_answer').val(nb_of_answer);
+                $('#time_to_answer').html(time_to_answer);
+                var points_answer = $('#points_answer').html();
+
+                var chronotime = $("#chronotime").html();
+                var elem = chronotime.split(":");
+                var h = elem[0];
+                var m = elem[1];
+                var s = elem[2];
+                var ms = elem[3];
+                var new_points = 0;
+                var points_bonus = 0;
+                if (m == 00) {
+                    if (status_answer == "correct_answer") {
+                        if (s < 01) {
+                            new_points = 300 * 1;
+                            points_bonus = 100 * 1;
+                        } else if (s < 02) {
+                            if (ms < 300) new_points = 250 * 1;
+                            else if (ms < 400) new_points = 230 * 1;
+                            else if (ms < 500) new_points = 200 * 1;
+                            else new_points = 180 * 1;
+                            points_bonus = 50 * 1;
+                        } else if (s < 03) {
+                            if (ms < 300) new_points = 170 * 1;
+                            else if (ms < 400) new_points = 150 * 1;
+                            else if (ms < 500) new_points = 140 * 1;
+                            else new_points = 130 * 1;
+                            points_bonus = 30 * 1;
+                        } else if (s < 05) {
+                            new_points = 100 * 1;
+                            points_bonus = 10 * 1;
+                        } else if (s < 10) {
+                            new_points = 50 * 1;
+                        } else if (s < 20) {
+                            new_points = 20 * 1;
+                        } else if (s < 30) {
+                            new_points = 10 * 1;
+                        } else if (s < 59) {
+                            new_points = 5 * 1;
+                        } else {
+                            new_points = 0 * 1;
+                        }
+                    }
+                } else {
+                    new_points = 0;
+                    if (status_answer == "correct_answer") new_points = 1 * 1;
+                }
+                var new_points_answer = parseInt(points_answer) + parseInt(new_points) + parseInt(points_bonus);
+                $('#points_answer').html(new_points_answer);
+                if (nb_of_answer < max_answer) {
+                    chrono_reset();
+                    $(this).test(false);
+                } else {
+                    $(this).party_over();
+                }
+            }
+        }
+
+
+
+        jQuery.fn.test = function(init) {
+            if (init) {
+                $('.multiplication_result').html('');
+                $('#points_answer').html('0');
+            }
+            chrono_start();
+            $('#answer').val('');
+
+            //var table_choice_value = $('#table_choice_for_game').val();
+            var table_choice_value = 'all';
+
+            if (table_choice_value == 'all') {
+                var first = 0;
+                var second = 0;
+				checkDuplicate(first, second);
+            } else {
+                var temp = parseInt(table_choice_value);
+                var first = temp;
+                var second = Math.floor((Math.random() * 10) + 1);
+            }
+				
+			first = $('#question_x').val();
+			second = $('#question_y').val();
+            var result = first * second;
+            var result_id = 'result_' + first + '_' + second;
+            $('#question').html('<div style="margin:10px 0 10px 0;">' + first + ' X ' + second + '</div>');
+            //$('#question_x').val(first);
+            //$('#question_y').val(second);
+            $('#answer_id').val(result_id);
+            var result_answer_id = 'correct_answer';
+            $('#answer_input').val(result);
+            var examples = '<div style="margin:0 0 10px 5px;">';
+            var id_value = '';
+            var result_error_id = '';
+            var no_answer = true;
+            var rand_choice_answer = Math.floor((Math.random() * 10) + 1);
+
+            for (i = 0; i < 10; i++) {
+                first = Math.floor((Math.random() * 10) + 1);
+                second = Math.floor((Math.random() * 10) + 1);
+                result_new = first * second;
+                result_error_id = 'wrong_answer_' + i;
+                if (result_new != result) {
+                    if (rand_choice_answer == i) {
+                        examples += ' <input onclick="$(this).answer_fct();" onmouseover="$(\'#status_answer\').val(\'correct_answer\');" onmouseout="$(\'#status_answer\').val(\'wrong_answer\');"  type="button" id="' + result_answer_id + '" class="button_example_1" value="' + result + '" />';
+                        no_answer = false;
+                    } else {
+                        examples += ' <input onclick="$(this).answer_fct();" onmouseover="$(\'#status_answer\').val(\'wrong_answer\');" type="button" id="' + result_error_id + '" class="button_example_1" value="' + result_new + '" />';
+                    }
+                } else {
+                    i--;
+                }
+            }
+
+            examples += '</div>';
+            if (!no_answer) {
+                $('#answer_choice').html(examples);
+            } else {
+                $('#answer_choice').html('Error');
+                $(this).test(false);
+            }
+        }
+        jQuery.fn.init_page = function() {
+            $('#question').html('');
+            $('#answer_id').val('');
+            $('#answer').val('');
+            $('#question_x').val('');
+            $('#question_y').val('');
+            $('#status_answer').val('');
+            $('#points_answer').html('0');
+            $('#nb_of_answer').val('0');
+            $("#nb_of_error").val('0');
+            $('#status_game').val('on');
+
+            //$(this).update_score_list(0);
+
+            $('#game_on_off').val('off');
+        }
+        jQuery.fn.party_over = function() {
+            $('#status_game').val('off');
+            $('#message_i').html('<div class="p_r">PARTY IS OVER <br /> Errors : ' + $("#nb_of_error").val() + '</div>');
+            $("#points_answer").css("font-size", 40);
+            var total_points = $('#points_answer').html();
+            var level = $('#level').val();
+            $("#tweet_result").html('<a title="Tweet Result" href="https://twitter.com/intent/tweet?text=Times tables test , ' + total_points + ' points , level ' + level + '&url=http://tablestest.com/"><img align="absmiddle" src="img/twitter.png" /></a>');
+            $('#answer_choice').html('');
+            $('#answer_choice').html('');
+            $('#question').html('');
+            $('#multiplication_test').hide();
+            $('#reset').hide();
+            $('#reload_game').show();
+            $('#save_score').hide();
+            $('#chronotime').show();
+        }
+        jQuery.fn.update_score_list = function(page) {
+            var level = $('#level').val();
+            $('#r2_div').html('<div class="l_score">Loading Scores...</div>');
+            $.ajax({
+                type: "POST",
+                url: "all_fcts.php",
+                data: "t=update_score_list&l=" + level + "&page=" + page,
+                success: function(c) {
+                    exp = /Error/gi;
+                    if (c.match(exp)) {
+                        $('#message_i').html('Error...');
+                        return false;
+                    } else {
+                        $('#r2_div').html(c);
+                        return true;
+                    }
+                }
+            });
+        }
+        var startTime = 0;
+        var start = 0;
+        var end = 0;
+        var diff = 0;
+        var timerID = 0;
+
+        function chrono() {
+            end = new Date();
+            diff = end - start;
+            diff = new Date(diff);
+            var msec = diff.getMilliseconds();
+            var sec = diff.getSeconds();
+            var min = diff.getMinutes();
+            var hr = diff.getHours() - 1;
+            if (min < 10) {
+                min = "0" + min;
+            }
+            if (sec < 10) {
+                sec = "0" + sec;
+            }
+            if (msec < 10) {
+                msec = "00" + msec;
+            } else if (msec < 100) {
+                msec = "0" + msec;
+            }
+            document.getElementById("chronotime").innerHTML = hr+ ":" + min + ":" + sec + ":" + msec;
+            timerID = setTimeout("chrono()", 10);
+        }
+
+        function chrono_start() {
+            start = new Date();
+            chrono();
+        }
+
+        function chrono_reset() {
+            document.getElementById("chronotime").innerHTML = "0:00:00:000";
+            start = new Date();
+        }
+
+        function chrono_stop() {
+            clearTimeout(timerID);
+        }
+		
+		function checkDuplicate(first, second) {
+		    first = Math.floor((Math.random() * 20) + 2);
+			first = first > 20 ? 20 : first;
+            second = Math.floor((Math.random() * 10) + 1);
+		    var result_id = 'result_' + first + '_' + second;
+			var resultValue = $('#'+result_id).text();
+			resultValue = resultValue.trim();
+			if(resultValue) {
+				checkDuplicate(first, second);
+			} else {
+				$('#question_x').val(first);
+				$('#question_y').val(second);
+			}
+		}
+    </script>
+</body>
+</html>
